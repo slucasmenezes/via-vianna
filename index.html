@@ -117,18 +117,30 @@
 					<div class="box">
 						<form method="post" action="http://www.viavianna.com.br/cgi-sys/formmail.pl" name="hgmailer">
 							<div class="field half first"><input type="text" name="Nome" placeholder="Nome" /></div>
-							<div class="field half"><input type="text" name="E-mail" placeholder="E-mail" /></div>
+							<div class="field half"><input type="email" name="E-mail" placeholder="E-mail" /></div>
 							<div class="field"><textarea name="Mensagem" placeholder="Mensagem" rows="6"></textarea></div>
 							<ul class="actions">
 								<li><input type="submit" value="Enviar Menssagem" onclick="hgsubmit();" /></li>
 							</ul>
 							<input type="hidden" name="recipient" value="contato@viavianna.com.br">
-							<input type="hidden" name="redirect" value="http://www.viavianna.com.br/site"> 
+							<input type="hidden" name="redirect" value="http://www.viavianna.com.br/site/obrigado.html"> 
 							<input type="hidden" name="subject" value="Formulário de Contato do Site">
 						</form>
 					</div>
 				</div>
 			</section>
+
+			<script type="text/javascript">
+			  function hgsubmit() {
+			    if (/\S+/.test(document.hgmailer.nome.value) == false) alert ("Por favor, digite um nome.");
+			    else if (/^\S+@[a-z0-9_.-]+\.[a-z]{2,6}$/i.test(document.hgmailer.email.value) == false) alert ("Um endereço de e-mail válido é requerido.");
+			    else if (/\S+/.test(document.hgmailer.mensagem.value) == false) alert ("É necessário um conteúdo para mensagem.");
+			    else { 
+			      document.hgmailer.submit();
+			      alert ('Obrigado!\nSeu e-mail foi enviado com sucesso.');
+			    }
+			  }  
+			</script>
 
 		<!-- Footer -->
 			<footer id="footer">
