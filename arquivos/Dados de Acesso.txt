@@ -18,3 +18,7 @@ Acesso https://addons.prestashop.com
 Username: contato@viavianna.com.br
 
 Password: I6mtsk3dZskuJ
+
+e-mail Gmail
+login: suporte.viavianna@gmail.com
+senha: viavianna@123
